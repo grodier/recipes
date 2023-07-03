@@ -1,16 +1,8 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Recipes";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Recipes</title>
-  </head>
-  <body>
-    <h1>Recipes</h1>
-    <li><a href="/recipes/chicken-lettuce-wraps/">Chicken Lettuce Wraps</a></li>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <li><a href="/recipes/chicken-lettuce-wraps/">Chicken Lettuce Wraps</a></li>
+</BaseLayout>
