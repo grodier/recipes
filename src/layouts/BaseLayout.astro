@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Main from "../components/Main.astro";
 let { pageTitle } = Astro.props;
 ---
 
@@ -10,8 +12,10 @@ let { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <h1>{pageTitle}</h1>
-    <slot />
+  <body class="bg-emerald-300">
+    <Header />
+    <Main>
+      <slot />
+    </Main>
   </body>
 </html>

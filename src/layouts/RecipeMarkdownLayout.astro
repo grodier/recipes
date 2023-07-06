@@ -4,6 +4,16 @@ let { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Written by: {frontmatter.author}</p>
-  <slot />
+  <div class="py-8">
+    <div class="mx-auto max-w-5xl">
+      <h1
+        class="capitalize text-center text-8xl font-extrabold text-sky-800 tracking-tighter"
+      >
+        {frontmatter.title}
+      </h1>
+    </div>
+    <div class="border-4 border-black rounded-lg bg-stone-100 p-6 mt-48">
+      <slot />
+    </div>
+  </div>
 </BaseLayout>
