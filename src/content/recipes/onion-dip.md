@@ -4,7 +4,7 @@ pubDate: 2022-07-02
 description: "This is a recipe for onion dip."
 author: "George Rodier"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  src: "/chicken-lettuce-wrap.jpg"
   alt: "The full Astro logo."
 tags: ["chicken", "lettuce", "wraps"]
 ---
