@@ -1,6 +1,5 @@
 ---
 import Header from "../components/Header.astro";
-import Main from "../components/Main.astro";
 let { pageTitle } = Astro.props;
 ---
 
@@ -14,8 +13,8 @@ let { pageTitle } = Astro.props;
   </head>
   <body class="bg-emerald-300">
     <Header />
-    <Main>
+    <main>
       <slot />
-    </Main>
+    </main>
   </body>
 </html>
