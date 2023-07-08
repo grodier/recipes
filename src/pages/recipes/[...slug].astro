@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import RecipeHero from "../../components/RecipeHero.astro";
 export async function getStaticPaths() {
   let recipeEntries = await getCollection("recipes");
   return recipeEntries.map((entry) => ({
@@ -12,29 +12,11 @@ export async function getStaticPaths() {
 
 let { entry } = Astro.props;
 let { Content } = await entry.render();
-
-import { Picture } from "@astrojs/image/components";
 ---
 
 <BaseLayout pageTitle={entry.data.title}>
-  <div class="py-8">
-    <div class="mx-auto max-w-5xl">
-      <h1
-        class="capitalize mx-auto max-w-3xl text-center text-6xl sm:text-8xl font-extrabold text-sky-800 tracking-tighter translate-y-8 text-outline"
-      >
-        {entry.data.title}
-      </h1>
-      <Picture
-        class="aspect-square w-3/4 md:w-1/2 block mx-auto border-4 border-black rounded-xl"
-        src={entry.data.image.src}
-        widths={[300, 500]}
-        aspectRatio="1:1"
-        sizes="(max-width: 1024px) 100vw, 512px"
-        alt="descriptive text"
-      />
-    </div>
-    <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6 mt-48">
-      <Content />
-    </div>
+  <RecipeHero title={entry.data.title} image={entry.data.image} />
+  <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6">
+    <Content />
   </div>
 </BaseLayout>
