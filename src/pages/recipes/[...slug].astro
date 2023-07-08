@@ -1,19 +1,30 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-let { frontmatter } = Astro.props;
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  let recipeEntries = await getCollection("recipes");
+  return recipeEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+let { entry } = Astro.props;
+let { Content } = await entry.render();
 
 import { Picture } from "@astrojs/image/components";
 const imageUrl =
   "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={entry.data.title}>
   <div class="py-8">
     <div class="mx-auto max-w-5xl">
       <h1
         class="capitalize text-center text-8xl font-extrabold text-sky-800 tracking-tighter"
       >
-        {frontmatter.title}
+        {entry.data.title}
       </h1>
       <Picture
         src={imageUrl}
@@ -24,7 +35,7 @@ const imageUrl =
       />
     </div>
     <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6 mt-48">
-      <slot />
+      <Content />
     </div>
   </div>
 </BaseLayout>

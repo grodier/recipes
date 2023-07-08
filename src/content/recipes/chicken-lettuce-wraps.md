@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/RecipeMarkdownLayout.astro
 title: "Chicken Lettuce Wraps"
 pubDate: 2022-07-01
 description: "This is a recipe for chicken lettuce wraps."
