@@ -7,11 +7,13 @@ let recipes = await getCollection("recipes");
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="p-4 md:p-8">
-    <ul>
+    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         recipes.map((recipe) => (
-          <li>
-            <a href="">{recipe.data.title}</a>
+          <li class="col-span-1 border-2 border-black rounded-lg bg-stone-100">
+            <a href={`/recipes/${recipe.slug}`}>
+              <div class="p-2">{recipe.data.title}</div>
+            </a>
           </li>
         ))
       }
