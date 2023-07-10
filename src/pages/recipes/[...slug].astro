@@ -17,6 +17,10 @@ let { Content } = await entry.render();
 <BaseLayout pageTitle={entry.data.title}>
   <RecipeHero title={entry.data.title} image={entry.data.image} />
   <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6">
-    <Content />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section class="col-span-1 md:col-span-2"><Content /></section>
+      <section class="col-span-1">Ingredients</section>
+      <section class="col-span-1">Steps</section>
+    </div>
   </div>
 </BaseLayout>
