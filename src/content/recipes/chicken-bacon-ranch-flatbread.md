@@ -4,7 +4,7 @@ pubDate: 2023-07-08
 description: "This is a recipe for chicken bacon ranch flatbread."
 author: "George Rodier"
 image:
-  src: "/chicken-lettuce-wrap.jpg"
+  src: "/chicken-bacon-ranch-flatbread.jpg"
   alt: "The full Astro logo."
 tags: ["chicken", "bacon", "grill", "flatbread"]
 ---
