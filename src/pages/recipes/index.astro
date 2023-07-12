@@ -6,13 +6,22 @@ let recipes = await getCollection("recipes");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="p-4 md:p-8">
-    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <section class="p-8 md:p-10 lg:p-12 mx-auto max-w-7xl">
+    <ul class="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         recipes.map((recipe) => (
-          <li class="col-span-1 border-2 border-black rounded-lg bg-stone-100">
+          <li class="col-span-1 border-2 border-black rounded-lg bg-stone-50 hover:shadow-xl hover:scale-105 active:scale-100">
             <a href={`/recipes/${recipe.slug}`}>
-              <div class="p-2">{recipe.data.title}</div>
+              <div>
+                <img
+                  src={recipe.data.image?.src}
+                  alt={recipe.data.image?.alt}
+                  class="block h-full w-full object-cover overflow-hidden"
+                />
+                <div class="p-2 text-lg font-semibold text-sky-800">
+                  {recipe.data.title}
+                </div>
+              </div>
             </a>
           </li>
         ))
