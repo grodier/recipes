@@ -11,6 +11,8 @@ let recipeCollection = defineCollection({
         alt: z.string(),
       })
       .optional(),
+    ingredients: z.array(z.string()),
+    steps: z.array(z.string()),
   }),
 });
 

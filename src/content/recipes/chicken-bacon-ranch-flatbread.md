@@ -7,6 +7,19 @@ image:
   src: "/chicken-bacon-ranch-flatbread.jpg"
   alt: "The full Astro logo."
 tags: ["chicken", "bacon", "grill", "flatbread"]
+ingredients:
+  [
+    "naan bread",
+    "bbq chicken",
+    "corn (optional)",
+    "red onion",
+    "parsley",
+    "mozzarella",
+    "ranch",
+    "bbq sauce",
+    "bacon",
+  ]
+steps: ["cook some things", "cook some more things", "eat", "clean up"]
 ---
 
 Welcome to my _recipe_ about chicken bacon ranch flatbreads!

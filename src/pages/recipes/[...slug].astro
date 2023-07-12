@@ -16,11 +16,23 @@ let { Content } = await entry.render();
 
 <BaseLayout pageTitle={entry.data.title}>
   <RecipeHero title={entry.data.title} image={entry.data.image} />
-  <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <section class="col-span-1 md:col-span-2"><Content /></section>
-      <section class="col-span-1">Ingredients</section>
-      <section class="col-span-1">Steps</section>
+  <div class="border-t-2 border-b-2 border-black bg-stone-100 p-6 sm:p-12">
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-10 max-w-7xl mx-auto"
+    >
+      <section class="col-span-1 md:col-span-3"><Content /></section>
+      <section class="col-span-1 space-y-3">
+        <h2 class="text-3xl text-sky-800 font-semibold">Ingredients</h2>
+        <ul class="list-disc list-inside">
+          {entry.data.ingredients.map((ingredient) => <li>{ingredient}</li>)}
+        </ul>
+      </section>
+      <section class="col-span-1 md:col-span-2 space-y-3">
+        <h2 class="text-3xl text-sky-800 font-semibold">Steps</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          {entry.data.steps.map((step) => <li>{step}</li>)}
+        </ol>
+      </section>
     </div>
   </div>
 </BaseLayout>
